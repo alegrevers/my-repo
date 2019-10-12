@@ -1,4 +1,18 @@
 <template>
+  <div>
+    <img src=".assets/images/pattern-1.png">
+  </div>
+</template>
+
+<script>
+
+</script>
+
+<style>
+
+</style>
+
+<!-- <template>
   <div id="app">
     <img src="./assets/logo.png">
     <router-view/>
@@ -20,4 +34,4 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-</style>
+</style> -->
