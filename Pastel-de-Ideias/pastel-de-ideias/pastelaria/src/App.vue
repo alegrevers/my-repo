@@ -1,15 +1,38 @@
 <template>
-  <div>
-    <img src=".assets/images/pattern-1.png">
+  <div class="background-responsive" id="app">
+    <img style="width: 100%; position: absolute;" src="./assets/images/wave.svg">
+    <CarteBuilder/>
+    <div>
+    <PastelDeIdeias/>
+    </div>
   </div>
 </template>
 
 <script>
+import PastelDeIdeias from "./main/PastelDeIdeias.vue"
+import CarteBuilder from "./components/CarteBuilder.vue"
+
+export default {
+  components: {PastelDeIdeias},
+  components: {CarteBuilder}
+}
 
 </script>
 
 <style>
+  .background-responsive{
+    background-repeat: round;
+    background-image: url("./assets/images/pattern-1.png");
+    position: relative;
+  }
 
+  body{
+    margin: 0;
+  }
+
+  .carte-builder{
+    height: 1000px;
+  }
 </style>
 
 <!-- <template>
