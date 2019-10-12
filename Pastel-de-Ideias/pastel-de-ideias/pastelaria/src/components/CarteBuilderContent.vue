@@ -8,27 +8,28 @@
             </div>
         </div>
         <div class="div-value">
-            <input placeholder="Título do Pedido" class="content-value" type="text" style="color: #a03401">
+            <input placeholder="Título do Pedido" class="content-value" type="text">
             <input placeholder="Sabor" class="content-value" type="text">
             <input placeholder="R$" class="content-value price" type="number">
         </div>
         <div>
-            <div class="content-value description" style="position: relative; z-index: 10;">
-                <input placeholder="Descrição" type="text">
+            <div class="content-value description">
+                <input class="input-content" placeholder="Descrição" type="text">
             </div>
-            <div style="z-index: 10; position: relative" class="content-value picture">
-                <input placeholder="Jogue aqui o arquivo de imagem do seu pastel ou clique para localizar a pasta" type="text" style="color: #a03401">
-                <img src="../assets/images/upload_icon.png" alt="">
+            <div class="content-value picture">
+                <img class="input-image" src="../assets/images/upload_icon.png">
+                <input class="input-content" placeholder="Jogue aqui o arquivo de imagem do seu pastel ou clique para localizar a pasta" type="text">
             </div>
         </div>
+        <Buttons/>
     </div>
 </template>
 
 <script>
-import CarteBuilder from "./CarteBuilder.vue"
+import Buttons from "./Buttons.vue"
 
 export default {
-  components: {CarteBuilder},
+  components: {Buttons},
   name: 'SwitchHueColors',
     data: () => ({
       boolean: true
@@ -93,12 +94,14 @@ export default {
         width: 470px;
         border-radius: 10px;
         border: 1px solid;
-        border-color: #a03401;
+        border-color: #e44738;
         margin: 0 0 0 20px;
         padding: 10px 10px 10px 20px;
-        font-size: 18px;
+        font-size: 16px;
         z-index: 10;
         position: relative;
+        cursor: pointer;
+
 
         &.price{
             height: 40px;
@@ -106,16 +109,40 @@ export default {
         }
 
         &.description{
-            height: 100px;
+            height: 80px;
             width: 1140px;
             margin: 20px 0 20px 20px;
+            font-size: 1px;
 
         }
 
         &.picture{
-            height: 150px;
+            height: 110px;
             width: 1140px;
             margin: 0 0 20px 20px;
+            display: grid;
+            justify-items: center;
+            font-size: 14px;
         }
+    }
+
+    .content-value::placeholder{
+        color: #a03401;
+    }
+
+    .input-content{
+        border-color: transparent;
+        font-size: 18px;
+        color: #a03401;
+        width: 700px
+    }
+
+    .input-content::placeholder{
+        color: #a03401;
+    }
+
+    .input-image{
+        width: 5%;
+        margin-right: 25px;
     }
 </style>

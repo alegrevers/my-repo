@@ -39,7 +39,7 @@ export default {
   }
 
   .carte-builder{
-    height: 425px;
+    height: 395px;
     width: 1180px;
     background-color: white;
     border-radius: 20px;
