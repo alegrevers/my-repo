@@ -1,9 +1,12 @@
 <template>
   <div class="background-responsive" id="app">
-    <img style="width: 100%; position: absolute;" src="./assets/images/wave.svg">
-    <CarteBuilder/>
-    <div>
-    <PastelDeIdeias/>
+    <div class="background">
+      <img style="width: 100%; position: absolute;" src="./assets/images/wave.svg">
+      <CarteBuilder/>
+      <div>
+        <PastelDeIdeias/>
+        <CarteSummary/>
+      </div>
     </div>
   </div>
 </template>
@@ -11,10 +14,14 @@
 <script>
 import PastelDeIdeias from "./main/PastelDeIdeias.vue"
 import CarteBuilder from "./components/CarteBuilder.vue"
+import CarteSummary from './components/CarteSummary.vue'
 
 export default {
-  components: {PastelDeIdeias},
-  components: {CarteBuilder}
+  components: {
+      PastelDeIdeias,
+      CarteBuilder,
+      CarteSummary
+    }
 }
 
 </script>
@@ -24,6 +31,13 @@ export default {
     background-repeat: round;
     background-image: url("./assets/images/pattern-1.png");
     position: relative;
+    height: 1200px;
+  }
+
+  .background{
+    background-color: transparent;  
+    background: linear-gradient(to right, transparent 0%, #fff 15%, #fff 85%, transparent 100%);
+    height: 1200px;
   }
 
   body{

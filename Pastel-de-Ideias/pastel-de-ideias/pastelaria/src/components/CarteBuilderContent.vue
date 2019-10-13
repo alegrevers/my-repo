@@ -134,7 +134,8 @@ export default {
         border-color: transparent;
         font-size: 18px;
         color: #a03401;
-        width: 700px
+        width: 700px;
+        height: 25px;
     }
 
     .input-content::placeholder{
