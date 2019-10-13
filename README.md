@@ -1,28 +1,13 @@
-<<<<<<< HEAD
-# pastel-de-ideias
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-=======
 # Pastel-de-Ideias
->>>>>>> 04f0e8f9f21e126e31a1289ce8eae91e24525b23
+
+Teste Doc88
+
+## Clonando o Repositório
+
+Basta clicar em Clone e escolher a opção de sua preferência
+
+### Iniciando o Projeto
+
+Após ter clonado o projeto siga a rota: Pastel-de-ideias(Repositório)/Pastel-de-ideias/pastel-de-ideias/pastelaria.
+
+Feito isso, é necessario apenas seguir as intruções de inicialização que estão descritas no arquivo README.md, dentro do diretório correspondente.
