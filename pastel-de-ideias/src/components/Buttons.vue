@@ -1,17 +1,27 @@
 <template>
-  <div class="button">
-      <button id='erase' class="clear">
-          LIMPAR
-      </button>
-      <button id='register' class="register">
-          CADASTRAR
-      </button>
-  </div>
+    <div class="button">
+        <button id='erase' label="apagar" class="clear" erase @onClick="ClearContainerData">
+            LIMPAR
+        </button>
+        <button id='register' class="register" @onClick='RegisterContainerUp'>
+            CADASTRAR
+        </button>
+    </div>
 </template>
 
 <script>
 export default {
+    props: {
+        label: {}
+    },
+    methods: {
+        ClearContainerData() {
+            // console.log("lasudhaldk")
+        },
+        RegisterContainerUp() {
 
+        }
+    },
 }
 </script>
 

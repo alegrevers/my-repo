@@ -4,7 +4,7 @@
             Monte aqui o seu cardápio! O que está esperando?
             <div class="toggle-switch">
                 Comida
-                <md-switch id='switch' v-model="boolean" class="md-primary md-switch-thumb" @click="ChangeItem">Bebida</md-switch>
+                <md-switch id='switch' v-model="boolean" class="md-primary md-switch-thumb" @onClick="ChangeItem">Bebida</md-switch>
             </div>
         </div>
         <div class="div-value">
