@@ -4,7 +4,7 @@
             Monte aqui o seu cardápio! O que está esperando?
             <div class="toggle-switch">
                 Comida
-                <md-switch id='switch' v-model="boolean" class="md-primary md-switch-thumb" @onClick="ChangeItem">Bebida</md-switch>
+                <md-switch v-model="boolean" class="md-primary md-switch md-switch-thumb" @onClick="ChangeItem">Bebida</md-switch>
             </div>
         </div>
         <div class="div-value">
@@ -16,7 +16,7 @@
         </div>
         <div>
             <div class="content-value description">
-                {{title}}
+                <!-- {{title}} -->
                 <input id="describe" class="input-content" placeholder="Descrição" type="text">
             </div>
             <div id="image-uploader" class="content-value picture">
@@ -59,9 +59,10 @@ export default {
         position: absolute;
     }
 
-    #switch {
+    .md-switch {
         display: flex;
         margin: 0 0 0 20px;
+        padding-left: 20px;
     }
 
     .toggle-switch{
@@ -70,6 +71,8 @@ export default {
         font-style: initial;
         width: 210px;
         display: flex;
+        margin-bottom: 35px;
+        align-items: center;
     }
 
     .parent md-switch .md-switch-container.success{
@@ -80,7 +83,7 @@ export default {
 
     @include md-register-theme("default", (
         primary: #e44738, // The primary color of your brand
-        accent: #e44736 // The secondary color of your brand
+        accent: #e44738 // The secondary color of your brand
     ));
 
     @import "~vue-material/dist/theme/all"; // Apply the theme

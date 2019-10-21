@@ -7,7 +7,7 @@
       </div>
       <div class="summary-builder">
         <div class="summary-start">
-            <!-- "Ajeita rapidinho pra mim" -->
+            <!-- "Ajeita rapidinho pra mim" -->{{title}}
             {{ title }}
             <div class="summary-price">
                 R$10,00
@@ -36,6 +36,7 @@
 // import CarteBuilderContent from "./CarteBuilderContent.vue"
 
 export default {
+  name: 'CarteSummary',
   components: {
     // CarteBuilderContent,
   }
@@ -44,15 +45,15 @@ export default {
 
 <style scope lang='scss'>
   h2 {
-    width: 100%; 
-    text-align: center; 
-    border-bottom: 2px solid #e44738; 
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid #e44738;
     line-height: 0.1em;
     margin: 110px 0 20px 0;
-  } 
+  }
 
-  span { 
-    background:#fff; 
+  span {
+    background:#fff;
     padding:0 50px;
     color: #a03401;
     font-style: italic;
@@ -108,7 +109,7 @@ export default {
 
     .summary-price{
       padding-right: 40px;
-      color: #fff 
+      color: #fff
     }
 
   .infos{
