@@ -19,7 +19,9 @@
 import CarteBuilderContent from "./CarteBuilderContent.vue"
 
 export default {
-  components: {CarteBuilderContent}
+  components: {
+    CarteBuilderContent,
+  }
 }
 </script>
 

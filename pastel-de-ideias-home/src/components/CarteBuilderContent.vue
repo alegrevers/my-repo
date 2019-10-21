@@ -4,43 +4,23 @@
             Monte aqui o seu cardápio! O que está esperando?
             <div class="toggle-switch">
                 Comida
-                <md-switch v-model="boolean" class="md-primary md-switch md-switch-thumb" @onClick="ChangeItem">Bebida</md-switch>
+                <md-switch v-model="boolean" class="md-primary md-switch md-switch-thumb">Bebida</md-switch>
             </div>
         </div>
-        <div class="div-value">
-            <input id="title" v-model="title" placeholder="Título do Pedido" class="content-value" type="text" :maxlength="max" :minlength="min">
-            <input id="flavour" v-model="flavour" placeholder="Sabor" class="content-value" type="text" :maxlength="max" :minlength="min">
-            <div class="content-value price">
-                R$ <input id="cost" class="input-price price" v-model="cost" type="number">
-            </div>
-        </div>
-        <div>
-            <div class="content-value description">
-                <textarea style="height: 60px;" name="description" id="describe" cols="30" rows="10" class="input-content" placeholder="Descrição"></textarea>
-            </div>
-            <div id="image-uploader" class="content-value picture">
-                <img class="input-image" src="../assets/images/upload_icon.png">     
-                <span id="upload-picture" class="input-content">
-                    Jogue aqui o arquivo de imagem do seu pastel ou clique para localizar a pasta
-                </span>     
-                <!-- <input id="upload-picture" class="input-content" placeholder="Jogue aqui o arquivo de imagem do seu pastel ou clique para localizar a pasta" type="text"/> -->
-            </div>
-        </div>
-        <Buttons/>
+        <form-carte/>
     </div>
 </template>
 
 <script>
-import Buttons from "./Buttons.vue"
+import FormCarte from "./FormCarte.vue"
 
 export default {
-  components: {Buttons},
-  name: 'SwitchHueColors',
+    components: {
+        FormCarte
+    },
+    name: 'SwitchHueColors',
     data: () => ({
-      boolean: true,
-      title: '',
-      max: 60,
-      min: 3
+        boolean: true,
     }),
 }
 </script>
@@ -93,88 +73,4 @@ export default {
 
     @import "~vue-material/dist/theme/all"; // Apply the theme
 
-    .div-value{
-        position: relative;
-        margin-top: 75px;
-        justify-content: space-between;
-        z-index: 2;
-        display: flex;
-    }
-
-    .content-value{
-        color: #a03401;
-        height: 40px;
-        width: 470px;
-        border-radius: 10px;
-        border: 1px solid;
-        border-color: #e44738;
-        margin: 0 0 0 20px;
-        padding: 10px 10px 10px 20px;
-        font-size: 16px;
-        z-index: 10;
-        position: relative;
-        cursor: pointer;
-
-
-        &.price{
-            height: 40px;
-            width: 150px;
-            background-color: #fff;
-            margin-right: auto;
-        }
-
-        .input-price{
-            width: 100px;
-            position: absolute;
-            height: 30px;
-            bottom: 3px;
-            border: none;
-            font-size: 16px;
-            color: #a03401;
-            padding-left: 5px;
-        }
-
-        &.description{
-            height: 80px;
-            width: 1140px;
-            margin: 20px 0 20px 20px;
-            font-size: 1px;
-        }
-
-        &.picture{
-            height: 110px;
-            width: 1140px;
-            margin: 0 0 20px 20px;
-            display: grid;
-            justify-items: center;
-            font-size: 14px;
-        }
-    }
-
-    .content-value::placeholder{
-        color: #a03401;
-    }
-
-    .input-content{
-        border-color: transparent;
-        font-size: 18px;
-        color: #a03401;
-        width: 700px;
-        font-family: Arial, Helvetica, sans-serif;
-        height: 25px;
-        flex: 1;
-        word-break: break-word;
-        width: 738px;
-        font-style: initial;
-        font-weight: 500;
-    }
-
-    .input-content::placeholder{
-        color: #a03401;
-    }
-
-    .input-image{
-        width: 5%;
-        margin-right: 25px;
-    }
 </style>

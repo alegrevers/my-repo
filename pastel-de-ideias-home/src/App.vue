@@ -5,7 +5,7 @@
       <CarteBuilder/>
       <div>
         <PastelDeIdeias/>
-        <CarteSummary/>
+        <!-- <CarteSummary/> -->
       </div>
     </div>
   </div>
@@ -14,13 +14,13 @@
 <script>
 import PastelDeIdeias from "./main/PastelDeIdeias.vue"
 import CarteBuilder from "./components/CarteBuilder.vue"
-import CarteSummary from './components/CarteSummary.vue'
+// import CarteSummary from './components/CarteSummary.vue'
 
 export default {
   components: {
       PastelDeIdeias,
       CarteBuilder,
-      CarteSummary
+      // CarteSummary
     }
 }
 

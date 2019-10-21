@@ -1,9 +1,9 @@
 <template>
     <div class="button">
-        <button id='erase' label="apagar" class="clear" erase @onClick="ClearContainerData">
+        <button id='erase' class="clear" @click="emitCleanData">
             LIMPAR
         </button>
-        <button id='register' class="register" @onClick='RegisterContainerUp'>
+        <button id='register' class="register" @click='RegisterContainerUp'>
             CADASTRAR
         </button>
     </div>
@@ -15,11 +15,16 @@ export default {
         label: {}
     },
     methods: {
-        ClearContainerData() {
-            // console.log("lasudhaldk")
+        emitCleanData: function() {
+            this.$emit('Cleaner')
         },
         RegisterContainerUp() {
-
+            this.$emit('Register')
+        }
+    },
+    data() {
+        return {
+            
         }
     },
 }
@@ -43,6 +48,7 @@ export default {
         font-size: 20px;
         font-weight: bold;
         margin-right: 33px;
+        cursor: pointer;
     }
 
     .register{
@@ -54,5 +60,6 @@ export default {
         border-radius: 50px;
         font-size: 20px;
         font-weight: bold;
+        cursor: pointer
     }
 </style>
