@@ -12,7 +12,7 @@
                 <textarea v-model="description" style="height: 60px;" name="description" id="describe" cols="30" rows="10" class="input-content" placeholder="Descrição"></textarea>
             </div>
             <div id="image-uploader" type="file" @click="onUpload" @change="onUpload" class="content-value picture">
-                <input type="file" class="teste" @change="onUpload">
+                <input type="file" class="input-image-selector" @change="onUpload">
                 <div class="input-image-preview">
                     <img class="image-preview" v-if="url" :src="url">
                 </div>
@@ -26,29 +26,31 @@
         <transition>
             <div id='menu' class="summary"  v-if="animated">
                 <h2><span>Veja como será apresentado ao cliente</span></h2>
-                <div :key="index" v-for="(carte, index) in order">
+                <div :key="index" v-for="(options, index) in order">
                     <div class="summary-image">
                         <img class="img" v-if="url" :src="url" alt="">
                     </div>
                     <div class="summary-builder">
                         <div class="summary-start">
-                            <div>
-                                {{carte.title}}
-                            </div>
+                                <!-- {{options.title}} -->
+                                {{title}}
                             <div class="summary-price">
-                                R${{cost}}
+                                <!-- R$ {{options.cost}} -->
+                                R$ {{cost}}
                             </div>
                         </div>
                         <div class="infos">
                             <div class="flavour">
                                 Sabor:
                                 <div class="type">
+                                    <!-- {{options.flavour}} -->
                                     {{flavour}}
                                 </div>
                             </div>
                             <div class="description">
                                 Descrição:
                                 <div class="type">
+                                    <!-- {{options.description}} -->
                                     {{description}}
                                 </div>
                             </div>
@@ -79,7 +81,7 @@ export default {
             url: null,
             max: 60,
             min:3,
-            id: 0,
+            // id: 0,
             animated: false,
             order: []
         }
@@ -90,17 +92,16 @@ export default {
             this.register()
         },
         register(){
-            let carte = {
-                id: this.id,
+            let carte = [{
+                // id: this.id,
                 title: this.title,
                 flavour: this.flavour,
                 cost: this.cost,
                 description: this.description,
                 url: this.url
-            }
+            }]
 
             this.order.push({
-                id: this.id++,
                 carte
             })
 
@@ -208,11 +209,11 @@ export default {
     }
 
     h2 {
-        width: 161.4%; 
+        width: 157.4%;
         text-align: center; 
         border-bottom: 1px solid #e44738; 
         line-height: 0.1em;
-        margin: 110px 0 20px 0;
+        margin: 110px 55px 20px 0;
     } 
 
     span { 
@@ -227,7 +228,7 @@ export default {
 
     .summary-builder{
         height: 230px;
-        width: 1040px;
+        width: 1080px;
         background-color: white;
         border-radius: 20px;
         position: relative;
@@ -311,13 +312,14 @@ export default {
         margin-left: 10px;
     }
 
-    .teste{
+    .input-image-selector{
         height: 110px;
         width: 1140px;
         opacity: 0;
         border-radius: 10px;
         position: absolute;
         cursor: pointer;
+        z-index: 10;
     }
 
     .input-image-preview{
@@ -334,6 +336,7 @@ export default {
     .image-preview{
         width: 108px;
         height: 100px;
+        z-index: 1;
     }
 
     .v-enter{
