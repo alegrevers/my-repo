@@ -18,9 +18,8 @@ export default {
     components: {
         FormCarte
     },
-    name: 'SwitchHueColors',
     data: () => ({
-        boolean: true,
+        boolean: false,
     }),
 }
 </script>

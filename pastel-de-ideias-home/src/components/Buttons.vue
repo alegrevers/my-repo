@@ -3,7 +3,7 @@
         <button id='erase' class="clear" @click="emitCleanData">
             LIMPAR
         </button>
-        <button id='register' class="register" @click='RegisterContainerUp'>
+        <button id='register' class="register" @click='RegisterAnimationCardUp'>
             CADASTRAR
         </button>
     </div>
@@ -18,8 +18,8 @@ export default {
         emitCleanData: function() {
             this.$emit('Cleaner')
         },
-        RegisterContainerUp() {
-            this.$emit('Register')
+        RegisterAnimationCardUp() {
+            this.$emit('RegisterAnimation')
         }
     },
     data() {

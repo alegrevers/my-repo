@@ -12,7 +12,7 @@
                 <textarea v-model="description" style="height: 60px;" name="description" id="describe" cols="30" rows="10" class="input-content" placeholder="Descrição"></textarea>
             </div>
             <div id="image-uploader" type="file" @click="onUpload" @change="onUpload" class="content-value picture">
-                <input type="file" class="teste" @change="onUpload">
+                <input type="file" class="input-image-selector" @change="onUpload">
                 <div class="input-image-preview">
                     <img class="image-preview" v-if="url" :src="url">
                 </div>
@@ -22,37 +22,43 @@
                 </span>  
             </div>
         </div>
-        <Buttons @Cleaner="cleaner" @Register="register"/>
-        <div id='menu' class="summary">
-            <h2><span>Veja como será apresentado ao cliente</span></h2>
-            <div>
-                <div class="summary-image">
-                    <img class="img" v-if="url" :src="url" alt="">
-                </div>
-                <div class="summary-builder">
-                    <div class="summary-start">
-                        {{title}}
-                        <div class="summary-price">
-                            R${{cost}}
-                        </div>
+        <Buttons @Cleaner="cleaner" @RegisterAnimation="doRegisterAnimation"/>
+        <transition>
+            <div id='menu' class="summary"  v-if="animated">
+                <h2><span>Veja como será apresentado ao cliente</span></h2>
+                <div :key="index" v-for="(options, index) in order">
+                    <div class="summary-image">
+                        <img class="img" v-if="url" :src="url" alt="">
                     </div>
-                    <div class="infos">
-                        <div class="flavour">
-                            Sabor:
-                            <div class="type">
-                                {{flavour}}
+                    <div class="summary-builder">
+                        <div class="summary-start">
+                                <!-- {{options.title}} -->
+                                {{title}}
+                            <div class="summary-price">
+                                <!-- R$ {{options.cost}} -->
+                                R$ {{cost}}
                             </div>
                         </div>
-                        <div class="description">
-                            Descrição:
-                            <div class="type">
-                                {{description}}
+                        <div class="infos">
+                            <div class="flavour">
+                                Sabor:
+                                <div class="type">
+                                    <!-- {{options.flavour}} -->
+                                    {{flavour}}
+                                </div>
+                            </div>
+                            <div class="description">
+                                Descrição:
+                                <div class="type">
+                                    <!-- {{options.description}} -->
+                                    {{description}}
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </transition>
     </div>
 </template>
 
@@ -64,7 +70,7 @@ export default {
         Buttons
     },
     props: [
-        // 'title', 
+        'title', 
         'flavour',
         'cost',
         'description',
@@ -75,10 +81,31 @@ export default {
             url: null,
             max: 60,
             min:3,
-            title: '',
+            // id: 0,
+            animated: false,
+            order: []
         }
     },
     methods: {
+        doRegisterAnimation(){
+            this.animated = !this.animated,
+            this.register()
+        },
+        register(){
+            let carte = [{
+                // id: this.id,
+                title: this.title,
+                flavour: this.flavour,
+                cost: this.cost,
+                description: this.description,
+                url: this.url
+            }]
+
+            this.order.push({
+                carte
+            })
+
+        },
         cleaner(){
             this.title = '';
             this.flavour = '';
@@ -86,27 +113,11 @@ export default {
             this.description = '';
             this.url = null
         },
-            // register(){
-            //     this.title = this.title;
-            //     this.flavour = this.flavour;
-            //     this.cost = this.cost;
-            //     this.description = this.description;
-            //     this.files = this.url
-            // },
         onUpload(e){
             const file = e.target.files[0];
             this.url = URL.createObjectURL(file);
-        },
-        PreviewImage(){
-
         }
-    },
-    computed: {
-        register: function(){
-
-            return  'register'
-        }
-    }  
+    }, 
 }
 
 </script>
@@ -198,11 +209,11 @@ export default {
     }
 
     h2 {
-        width: 161.4%; 
+        width: 157.4%;
         text-align: center; 
-        border-bottom: 2px solid #e44738; 
+        border-bottom: 1px solid #e44738; 
         line-height: 0.1em;
-        margin: 110px 0 20px 0;
+        margin: 110px 55px 20px 0;
     } 
 
     span { 
@@ -217,15 +228,15 @@ export default {
 
     .summary-builder{
         height: 230px;
-        width: 1040px;
+        width: 1080px;
         background-color: white;
         border-radius: 20px;
         position: relative;
         box-shadow: 4px 13px 30px 1px rgba(252, 56, 56, 0.2);
         justify-content: center;
         display: flex;
-        margin-top: 60px;
-        margin-left: 140px;
+        margin-right: 140px;
+        left: 100px;
     }
 
     .summary{
@@ -244,7 +255,7 @@ export default {
         width: 180px;
         height: 180px;
         border-radius: 15px;
-        margin-top: 45px;
+        margin-top: 25px;
     }
 
     .summary-start{
@@ -257,7 +268,7 @@ export default {
         font-weight: bold;
         font-size: 30px;
         font-family: Arial, Helvetica, sans-serif;
-        padding-left: 90px;
+        padding-left: 120px;
         padding-top: 30px;
         display: flex;
         justify-content: space-between;
@@ -272,7 +283,7 @@ export default {
     .infos{
         z-index: 1;
         position: absolute;
-        left: 85px;
+        left: 120px;
         margin-top: 110px;
     }
 
@@ -301,13 +312,14 @@ export default {
         margin-left: 10px;
     }
 
-    .teste{
+    .input-image-selector{
         height: 110px;
         width: 1140px;
         opacity: 0;
         border-radius: 10px;
         position: absolute;
         cursor: pointer;
+        z-index: 10;
     }
 
     .input-image-preview{
@@ -324,5 +336,27 @@ export default {
     .image-preview{
         width: 108px;
         height: 100px;
+        z-index: 1;
+    }
+
+    .v-enter{
+        margin-top: 700px;
+    }
+
+    .v-enter-active{
+        transition: margin-top 0.5s;
+    }
+
+    .v-leave{
+
+    }
+
+    .v-leave-active{
+        transition: margin-top 0.5s;
+        display: none;
+    }
+
+    .v-leave-to{
+        margin-top: 0;
     }
 </style>
