@@ -1,4 +1,4 @@
-# grabriel.alegrete
+# gabriel.alegrete
 
 ## Project setup
 ```
