@@ -15,7 +15,7 @@
 
 <script>
 export default {
-    name: 'Land'
+    name: 'Land',
 }
 </script>
 
@@ -28,7 +28,6 @@ export default {
     }
     input {
         margin: 5px;
-        width: 100px;
     }
 
     input::-webkit-outer-spin-button,
