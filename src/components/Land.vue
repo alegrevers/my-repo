@@ -28,6 +28,7 @@ export default {
     }
     input {
         margin: 5px;
+        width: 100px;
     }
 
     input::-webkit-outer-spin-button,
