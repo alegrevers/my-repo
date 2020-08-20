@@ -12,11 +12,14 @@
     "vue": "^2.6.11"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-loader": "^4.0.1",
@@ -24,7 +27,8 @@
     "eslint-plugin-vue": "^6.2.2",
     "prettier": "^2.0.5",
     "prettier-eslint": "^11.0.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.44.1"
   },
   "eslintConfig": {
     "root": true,
