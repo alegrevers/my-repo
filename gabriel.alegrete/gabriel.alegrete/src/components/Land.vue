@@ -21,14 +21,12 @@ export default {
 
 <style scoped>
     .screen{
-        background: yellow;
-        height: 200px;
-        width: 500px;
+        justify-items: center;
+        background-image: url('../../src/assets/images/FB_IMG_1547514970654 (1).jpg');
         display: grid;
     }
     input {
         margin: 5px;
-        width: 100px;
     }
 
     input::-webkit-outer-spin-button,
