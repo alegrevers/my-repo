@@ -1,15 +1,21 @@
 <template>
     <div class="screen">
-        name:
-        <input type="text" name="name">
+        <div>
+            <img src="../../../src/assets/images/guita_3.png"><img/>
+        </div>
 
-        e-mail:
-        <input type="text" name="email">
+        <div>
+            name:
+            <input type="text" name="name">
 
-        phone number:
-        <input type="number" name="phone">
+            e-mail:
+            <input type="text" name="email">
 
-        <input type="submit" name="save_login" value="send">
+            phone number:
+            <input type="number" name="phone">
+
+            <input type="submit" name="save_login" value="send">
+        </div>
     </div>
 </template>
 
@@ -21,11 +27,17 @@ export default {
 
 <style scoped>
     .screen{
+        /* top: 100%; */
         justify-items: center;
         display: grid;
+        /* position: relative; */
     }
     input {
         margin: 5px;
+    }
+
+    img{
+        width: 100%;
     }
 
     input::-webkit-outer-spin-button,
