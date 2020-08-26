@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <Land />
   </div>
 </template>
@@ -21,11 +22,9 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  /* background-image: url('../../src/assets/images/FB_IMG_1547514970654 (1).jpg'); */
-    /* background-size: cover;
-    height: 100%;
-    background-attachment: scroll; */
+  font-family: 'Roboto';
+  color: white;
+  background: #2c3e50;
 }
 
 body {
