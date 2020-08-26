@@ -3,21 +3,23 @@
         <head>
             <input type="text">
         </head>
-        <div>
-            <img src="../../src/assets/images/guita_4.png"><img/>
-        </div>
+        <div class="main__content">
+            <div class="main__content__forms">
+                name:
+                <input type="text" name="name">
 
-        <div>
-            name:
-            <input type="text" name="name">
+                e-mail:
+                <input type="text" name="email">
 
-            e-mail:
-            <input type="text" name="email">
+                phone number:
+                <input type="number" name="phone">
 
-            phone number:
-            <input type="number" name="phone">
+                <input type="submit" name="save_login" value="send">
+            </div>
 
-            <input type="submit" name="save_login" value="send">
+            <div>
+                <img src="../../src/assets/images/guita_4.png">
+            </div>
         </div>
     </div>
 </template>
@@ -30,14 +32,17 @@ export default {
 
 <style lang="scss" scoped>
 
-    main {
+    .main {
         font-family: 'Roboto';
 
-        &__screen {
-            /* top: 100%; */
-            // justify-items: center;
-            display: grid;
-            /* position: relative; */
+        &__content {
+            display: flex;
+            justify-content: center;
+            padding: 50px;
+
+            &__forms {
+                display: grid;
+            }
         }
     }
     head {
