@@ -1,20 +1,25 @@
 <template>
     <div class="main">
-        <head>
-            <input type="text">
-        </head>
+        <!-- <head>
+            <a href="">início</a>
+            <a href="">sobre</a>
+            <a href="">contato</a>
+            <a href="">meus sons(e covers)</a>
+        </head> -->
         <div class="main__content">
             <div class="main__content__forms">
-                name:
-                <input type="text" name="name">
+                <h1>
+                    Tenha as <em>melhores</em> e mais <em>práticas</em> aulas de <em>guitarra</em> e <em>violão</em> comigo!
+                </h1>
+                <div class="main__content__inputs">
+                    <input placeholder="o nome que sua mãe te deu (:" type="text" name="name">
 
-                e-mail:
-                <input type="text" name="email">
+                    <input placeholder="o e-mail que tu mais usa" type="text" name="email">
 
-                phone number:
-                <input type="number" name="phone">
+                    <input placeholder="seu telefone (não é para passar trote)" type="number" name="phone">
 
-                <input type="submit" name="save_login" value="send">
+                    <input class="main__content__inputs--register" type="submit" name="save_login" value="Cadastrar!">
+                </div>
             </div>
 
             <div>
@@ -34,47 +39,90 @@ export default {
 
     .main {
         font-family: 'Roboto';
+        font-size: 20px;
+        height: 100%;
 
         &__content {
             display: flex;
             justify-content: center;
             padding: 50px;
 
-            &__forms {
+            &__inputs {
                 display: grid;
+
+                &--register {
+                    border: none;
+                    background-image: linear-gradient(to right, #feca3d, #f58638);
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+            }
+
+            &__forms {
+                width: 400px;
+                margin-right: 100px;
             }
         }
     }
+
+    a {
+        background-color: transparent;
+        margin-right: 50px;
+        color: #2c3e50;
+        text-decoration: none;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    h1 {
+        // word-wrap: break-word;
+        text-align: left;
+        color: white;
+    }
+
+    em {
+        font-style: normal;
+        background: -webkit-linear-gradient(#feca3d, #f58638);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
     head {
         position: relative;
-        display: block;
+        display: flex;
         background-image: linear-gradient(to right, #feca3d, #f58638);
         width: 100%;
+        justify-content: flex-end;
+        align-items: center;
+        height: 35px;
+    }
+
+    img {
+        margin-left: 100px;
     }
     
     input {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
         outline: none;
         margin: 5px;
         font-family: 'Roboto';
-        font-size: 17px;
-        color: white;
-        border: 0 0 1px 0;
-        border-color: transparent;
-        border-bottom-color: #feca3d;
+        padding: 5px;
+        border: none;
         border-radius: 10px;
-        background-color: #2c3e50;
+        font-size: 18px;
+        color: white;
+        background: #15202b;
     }
 
-    /* img{
-        width: 100%;
-    } */
+    input:hover {
+        background: #2c3e50;
+        border: 1px solid #feca3d;
+    }
 
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
     }
+
 </style>
