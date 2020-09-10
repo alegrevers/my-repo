@@ -12,18 +12,19 @@
                     Tenha as <em>melhores</em> e mais <em>práticas</em> aulas de <em>guitarra</em> e <em>violão</em> comigo!
                 </h1>
                 <div class="main__content__inputs">
-                    <input placeholder="o nome que sua mãe te deu (:" type="text" name="name">
+                    <input class="main__content__inputs--forms" placeholder="o nome que sua mãe te deu (:" type="text" name="name">
 
-                    <input placeholder="o e-mail que tu mais usa" type="text" name="email">
+                    <input class="main__content__inputs--forms" placeholder="o e-mail que tu mais usa" type="text" name="email">
 
-                    <input placeholder="seu telefone (não é para passar trote)" type="number" name="phone">
+                    <input class="main__content__inputs--forms" placeholder="seu telefone (não é para passar trote)" type="number" name="phone">
 
                     <input class="main__content__inputs--register" type="submit" name="save_login" value="Cadastrar!">
                 </div>
             </div>
 
-            <div>
+            <div class="main__content__image">
                 <img src="../../src/assets/images/guita_4.png">
+                encerramento da escola Espaço Garage - 2018
             </div>
         </div>
     </div>
@@ -50,17 +51,40 @@ export default {
             &__inputs {
                 display: grid;
 
+                &--forms {
+                    background: #15202b;
+                }
+
+                &--forms:focus {
+                    background: #2c3e50;
+                    border: 1px solid #feca3d;
+                }
+
                 &--register {
                     border: none;
-                    background-image: linear-gradient(to right, #feca3d, #f58638);
+                    background: linear-gradient(to right, #ecad00, #e66000);
+                    transition: 0.3s;
                     font-size: 20px;
                     font-weight: bold;
+                }
+
+                &--register:hover {
+                    border: none;
+                    background: linear-gradient(to right, #f58638, #feca3d);
+                    box-shadow: 5px 5px 10px 2px #15202b;
+                    cursor: pointer;
                 }
             }
 
             &__forms {
                 width: 400px;
                 margin-right: 100px;
+            }
+
+            &__image {
+                font-size: 13px;
+                display: grid;
+                font-style: italic;
             }
         }
     }
@@ -106,15 +130,15 @@ export default {
         outline: none;
         margin: 5px;
         font-family: 'Roboto';
-        padding: 5px;
-        border: none;
+        padding: 5px 5px 5px 10px;
+        border: 1px solid #2c3e50;
         border-radius: 10px;
         font-size: 18px;
         color: white;
-        background: #15202b;
+        transition: 0.3s;
     }
 
-    input:hover {
+    input:focus {
         background: #2c3e50;
         border: 1px solid #feca3d;
     }
