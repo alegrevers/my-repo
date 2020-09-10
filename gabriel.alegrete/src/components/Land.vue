@@ -27,7 +27,6 @@
                 encerramento da escola Espaço Garage - 2018
             </div>
         </div>
-        <div class="separator"></div>
         <div class="complement">
             <div class="complement__text">
                 <div class="complement__text__explains">
@@ -91,6 +90,7 @@ export default {
         height: 100%;
         justify-items: center;
         display: grid;
+        position: relative;
 
         &__content {
             display: flex;
@@ -189,14 +189,6 @@ export default {
         width: 100%;
         font-size: 15px;
     }
-    
-    .separator {
-        height: 2px;
-        width: 85%;
-        background: linear-gradient(to right, #f58638, #feca3d);
-        margin: 10px;
-        justify-content: center;
-    }
 
     h1 {
         text-align: left;
@@ -249,8 +241,51 @@ export default {
         margin: 0;
     }
 
-    @media only screen and (max-device-width: 900px) {
-        /* .menu { width:100%; } */
+    @media only screen and (max-device-width: 1100px) {
+        .main {
+            font-size: 25px;
+
+            &__content {
+                display: grid;
+                justify-items: center;
+                padding: 30px 0 0 0;
+
+                &__forms {
+                    margin: 0;
+                    margin-bottom: 100px;
+                    width: 600px;
+                }
+
+                &__image {
+                    margin-right: 100px;
+                }
+
+                &__inputs {
+                    &--register {
+                        font-size: 45px;
+                    }
+                }
+            }
+        }
+
+        .complement {
+            &__text {
+                display: grid;
+
+                &__explain {
+                    font-size: 350px;
+                }
+
+                &__bio {
+                    font-size: 31px;
+                }
+            }
+        }
+
+        input {
+            font-size: 30px;
+            line-height: 75px;
+        }
     }
 
 </style>
