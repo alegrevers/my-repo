@@ -1,11 +1,11 @@
 <template>
     <div class="main">
-        <!-- <head>
-            <a href="">início</a>
-            <a href="">sobre</a>
-            <a href="">contato</a>
-            <a href="">meus sons(e covers)</a>
-        </head> -->
+        <!-- <head> -->
+            <!-- <a href="">início</a> -->
+            <!-- <a href="/bio">sobre</a> -->
+            <!-- <a href="/contact">contato</a> -->
+            <!-- <a href="">meus sons(e covers)</a> -->
+        <!-- </head> -->
         <div class="main__content">
             <div class="main__content__forms">
                 <h1>
