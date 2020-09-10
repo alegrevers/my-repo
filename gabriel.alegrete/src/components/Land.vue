@@ -123,6 +123,13 @@ export default {
                     box-shadow: 5px 5px 10px 2px #15202b;
                     cursor: pointer;
                 }
+
+                &--register:focus {
+                    border: none;
+                    background: linear-gradient(to right, #f58638, #feca3d);
+                    box-shadow: 5px 5px 10px 2px #15202b;
+                    cursor: pointer;
+                }
             }
 
             &__forms {
